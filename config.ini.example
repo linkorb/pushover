@@ -1,0 +1,17 @@
+; This config file stores test credentials for Pushover
+;
+; This is an example file. Copy / rename it to `config.test.ini` and add
+; real values.
+; 
+; Retrieve your token by registering your app: 
+; 	https://pushover.net/apps/build
+;
+; Retrieve your user_key here (login first!):
+; 	https://pushover.net/
+;
+
+[pushover]
+token = ""
+user_key = ""
+message = "Hello world :-)"
+
