@@ -44,7 +44,7 @@ class Message {
 	/**
 	 * The message title, as shown in the push message window
 	 */
-	private $title = "No title";
+	private $title = null;
 
 	/**
 	 * An optional url to more information about this message
@@ -163,7 +163,6 @@ class Message {
 	 * @param string $message actual message content (plain text)
 	 */
 	public function setMessage($title, $message) {
-		if ($title == '') throw new \InvalidArgumentException('title parameter is empty');
 		if ($message == '') throw new \InvalidArgumentException('message parameter is empty');
 		$this->title = $title;
 		$this->message = $message;
