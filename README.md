@@ -5,7 +5,9 @@ Simple API client for www.pushover.net
 ## Features
 
 * PSR-0 compatible, works with composer and is registered on packagist.org
-* Stand-alone library, no external dependancies
+* Send messages using custom titles, urls and url texts.
+* Support for message priorities (-1, 0, 1 and 2)
+* Stand-alone library, no external dependencies
 * Unit tests
 
 ## Installing

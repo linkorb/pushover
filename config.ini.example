@@ -1,7 +1,9 @@
-; This config file stores test credentials for Pushover
+; This config file stores test credentials for Pushover test-suite
 ;
-; This is an example file. Copy / rename it to `config.test.ini` and add
+; This is an example file. Copy / rename it to `config.ini` and add
 ; real values.
+;
+; Simply run the tests by entering `phpunit`
 ; 
 ; Retrieve your token by registering your app: 
 ; 	https://pushover.net/apps/build
