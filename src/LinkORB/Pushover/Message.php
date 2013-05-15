@@ -171,6 +171,7 @@ class Message {
 	/**
 	 * Send this message
 	 *
+	 * @return bool Indicates the message was send successful.
 	 */
 	public function send() {
 		$curl_handle = curl_init();
@@ -188,9 +189,15 @@ class Message {
 		curl_setopt_array($curl_handle,
 			array(
 				CURLOPT_URL => $this->pushover_messages_url,
-				CURLOPT_POSTFIELDS => $postfields
+				CURLOPT_POSTFIELDS => $postfields,
+                CURLOPT_RETURNTRANSFER => true,
 			));
-		curl_exec($curl_handle);
+		$response = curl_exec($curl_handle);
 		curl_close($curl_handle);
+
+		if (isset($response['status']) && $response['status'] == 1) {
+			return true;
+		}
+		return false;
 	}
 }
