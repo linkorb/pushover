@@ -101,8 +101,21 @@ class RunTest extends \PHPUnit_Framework_TestCase {
 
 		$this->message->setPriority(2, 60, 3600);
 		$this->message->setUrl('http://www.linkorb.com/news', 'Cool blog');
-		$this->message->send();
-		return true;
+		$this->assertTrue($this->message->send());
 	}
-	
+
+	/**
+	 * Test sending an actual message with wrong settings.
+	 */
+	function testSendFailedMessage() {
+
+		$message = new Message(
+			$this->config['pushover']['token'] . 'brokentoken',
+			$this->config['pushover']['user_key'],
+			$this->config['pushover']['message']);
+
+		$message->setPriority(2, 60, 3600);
+		$message->setUrl('http://www.linkorb.com/news', 'Cool blog');
+		$this->assertFalse($message->send());
+	}
 }
